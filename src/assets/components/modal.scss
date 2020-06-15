@@ -20,12 +20,27 @@
   height: 50px;
   width: 100%;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
+  background-color: #9ec229;
+  border-radius: 5px 5px 0px 0px;
+}
+.modal-title-wrapper {
+  display: flex;
+  flex: 3;
+  margin-left: 1rem;
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+}
+.icon-wrapper {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
   margin-right: 1rem;
 }
+
 .clear-icon {
-  color: #999898;
+  color: #fff;
   top: 15px;
   right: 15px;
   cursor: pointer;

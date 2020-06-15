@@ -17,15 +17,14 @@ export const Modal: React.FC<Props> = ({ handleModal }) => {
     <div className="modal-overlay">
       <div className="modal-wrapper">
         <div className="modal-header">
-          <Clear onClick={handleModal} className="clear-icon" />
+          <div className="modal-title-wrapper">
+            <div>Add Customer</div>
+          </div>
+          <div className="icon-wrapper">
+            <Clear onClick={handleModal} className="clear-icon" />
+          </div>
         </div>
       </div>
     </div>
-    // <Dialog className="dialog-sample" open>
-    //   <DialogContent>
-    //     <Clear onClick={handleModal} className="clear-icon" />
-    //     <div className="modal-content"></div>
-    //   </DialogContent>
-    // </Dialog>
   );
 };
