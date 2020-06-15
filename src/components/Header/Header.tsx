@@ -10,7 +10,7 @@ export const Header: React.FC = () => {
         <div className="header-title">Customers</div>
       </div>
       <div className="button-wrapper">
-        <button className="button">Add Customer</button>
+        <button className="add-button">Add Customer</button>
       </div>
     </div>
   );

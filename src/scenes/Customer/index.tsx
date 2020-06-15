@@ -3,6 +3,7 @@ import React from "react";
 // components
 import { Header } from "../../components/Header/Header";
 import { FlexTable } from "../../components/FlexTable/FlexTable";
+import { SearchNavbar } from "../../components/SearchNavbar/SearchNavBar";
 // styles
 import "../../assets/scenes/customer.scss";
 
@@ -11,6 +12,7 @@ function Customer() {
   return (
     <div className="customer-view-wrapper">
       <Header />
+      <SearchNavbar />
       <FlexTable />
     </div>
   );

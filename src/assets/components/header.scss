@@ -22,3 +22,17 @@
   justify-content: flex-end;
   margin-right: 2rem;
 }
+
+.add-button {
+  box-shadow: none;
+  border: none;
+  background: #9ec229;
+  min-width: 85px;
+  border-radius: 5px;
+  height: 40px;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  margin-left: 5px;
+  outline: none;
+  cursor: pointer;
+}
