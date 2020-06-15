@@ -2,7 +2,7 @@ import React from "react";
 import "./App.scss";
 
 // core components
-import Customer from "./scenes/Customer/index";
+import { Customer } from "./scenes/Customer/index";
 
 function App() {
   return (
