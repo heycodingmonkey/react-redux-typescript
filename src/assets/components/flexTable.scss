@@ -68,107 +68,12 @@
     overflow: hidden;
     transition: max-height 0.4s linear;
   }
-
-  &-created {
-    .flex-table-row::before {
-      background-color: #d8d8d8;
-    }
-    .progress-indicator {
-      background-color: #d8d8d8;
-    }
-  }
-  &-accepted {
-    .flex-table-row::before {
-      background-color: #ffc138;
-    }
-    .progress-indicator {
-      background-color: #ffc138;
-      width: calc(100% * 1 / 6);
-    }
-  }
-  &-in_progress {
-    .flex-table-row::before {
-      background-color: #ff6f00;
-    }
-    .progress-indicator {
-      background-color: #ff6f00;
-      width: calc(100% * 2 / 6);
-    }
-  }
-  &-prepared {
-    .flex-table-row::before {
-      background-color: #673ab7;
-    }
-    .progress-indicator {
-      background-color: #673ab7;
-      width: calc(100% * 3 / 6);
-    }
-  }
-  &-delivery_placed {
-    .flex-table-row::before {
-      background-color: #1d0024;
-    }
-    .progress-indicator {
-      background-color: #1d0024;
-      width: calc(100% * 3 / 6);
-    }
-  }
-  &-waiting_for_pickup {
-    .flex-table-row::before {
-      background-color: #15bfdd;
-    }
-    .progress-indicator {
-      background-color: #15bfdd;
-      width: calc(100% * 4 / 6);
-    }
-  }
-  &-on_route {
-    .flex-table-row::before {
-      background-color: #8b651d;
-    }
-    .progress-indicator {
-      background-color: #8b651d;
-      width: calc(100% * 5 / 6);
-    }
-  }
-  &-done {
-    .flex-table-row::before {
-      background-color: #6ad17e;
-    }
-    .progress-indicator {
-      background-color: #6ad17e;
-    }
-  }
   &-completed {
     .flex-table-row::before {
       background-color: #6ad17e;
     }
     .progress-indicator {
       background-color: #6ad17e;
-    }
-  }
-  &-resumed {
-    .flex-table-row::before {
-      background-color: #009688;
-    }
-    .progress-indicator {
-      background-color: #009688;
-    }
-  }
-  &-on_hold {
-    .flex-table-row::before {
-      background-color: #e85b67;
-    }
-    .progress-indicator {
-      background-color: #e85b67;
-    }
-  }
-  &-canceled {
-    .flex-table-row::before {
-      background-color: #3f51b5;
-    }
-    .progress-indicator {
-      background-color: #3f51b5;
     }
   }
 

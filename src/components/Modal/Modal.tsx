@@ -24,6 +24,7 @@ export const Modal: React.FC<Props> = ({
   selectedCustomer,
   onEditCustomer,
 }) => {
+  // custom hook for form data
   const { values, handleChange, setDateValue } = useForm(selectedCustomer);
 
   const handleSubmit = () => {

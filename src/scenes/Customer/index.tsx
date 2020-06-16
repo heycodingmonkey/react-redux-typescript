@@ -19,6 +19,7 @@ import {
 } from "../../actions/customers";
 import { bindActionCreators } from "redux";
 
+// combining props
 type Props = LinkDispatchProps & LinkStateProps;
 
 // this will list down all the customers added
