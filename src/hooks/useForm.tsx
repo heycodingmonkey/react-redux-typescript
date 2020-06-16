@@ -1,16 +1,12 @@
 import { useState } from "react";
 
-export interface Customer {
-  firstName: string;
-  lastName: string;
-  phoneNumber: string;
-  dob: Date | Date[];
-}
+import { Customer } from "../types/Customer";
 
 export const useForm = () => {
   // const [date, setDate] = useState<Date | Date[]>(new Date());
 
   const [values, setValues] = useState<Customer>({
+    id: "",
     firstName: "",
     lastName: "",
     phoneNumber: "",

@@ -3,7 +3,8 @@ import React from "react";
 import Clear from "@material-ui/icons/Clear";
 import DatePicker from "react-date-picker";
 
-import { useForm, Customer } from "../../hooks/useForm";
+import { useForm } from "../../hooks/useForm";
+import { Customer } from "../../types/Customer";
 // styles
 import "../../assets/components/modal.scss";
 

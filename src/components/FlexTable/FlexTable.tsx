@@ -8,13 +8,19 @@ import Scrollbar from "react-perfect-scrollbar";
 import "react-perfect-scrollbar/dist/css/styles.css";
 // styles
 import "../../assets/components/flexTable.scss";
+import { Customer } from "../../types/Customer";
 // this will list down all the customers added
-export const FlexTable: React.FC = () => {
+
+interface Props {
+  customers: Customer[];
+}
+
+export const FlexTable: React.FC<Props> = (props) => {
   return (
     <div className="flex-table-container">
       <FlexTableHeader />
       <Scrollbar>
-        <FlexTableContent />
+        <FlexTableContent {...props} />
       </Scrollbar>
     </div>
   );
