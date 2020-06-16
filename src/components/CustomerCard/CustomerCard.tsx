@@ -7,6 +7,10 @@ interface Props {
   openModal: (value: Customer) => void;
 }
 
+const convertDate = (dob: Date | Date[]) => {
+  return dob.toLocaleString().split(",")[0];
+};
+
 // customer card
 export const CustomerCard: React.FC<Props> = (props) => {
   const { customer, deleteCustomer, openModal } = props;
@@ -32,7 +36,7 @@ export const CustomerCard: React.FC<Props> = (props) => {
           <span className="customer-name">{customer.phoneNumber}</span>
         </div>
         <div className="flex-row">
-          <span className="customer-name">01/05/1993</span>
+          <span className="customer-name">{convertDate(customer.dob)}</span>
         </div>
 
         <div className="flex-row-action">
