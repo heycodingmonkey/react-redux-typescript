@@ -1,23 +1,27 @@
-import React, { useState } from "react";
+import React from "react";
 //@material-ui/core icons
 import Clear from "@material-ui/icons/Clear";
 import DatePicker from "react-date-picker";
+
+import { useForm, Customer } from "../../hooks/useForm";
 // styles
 import "../../assets/components/modal.scss";
 
 interface Props {
   open?: boolean;
-  handleModal?: () => void;
+  handleModal: () => void;
+  onSubmitForm: (values: Customer) => void;
 }
 
 // this will list down all the customers added
-export const Modal: React.FC<Props> = ({ handleModal }) => {
-  const [date, setDate] = useState<Date | Date[]>(new Date());
+export const Modal: React.FC<Props> = ({ handleModal, onSubmitForm }) => {
+  const { values, handleChange, setDateValue } = useForm();
 
-  const setDateValue = (value: Date | Date[]) => {
-    setDate(value);
+  const handleSubmit = () => {
+    // no validations
+    // pass it to parent component
+    onSubmitForm(values);
   };
-
   return (
     <div className="modal-overlay">
       <div className="modal-wrapper">
@@ -31,9 +35,11 @@ export const Modal: React.FC<Props> = ({ handleModal }) => {
         </div>
         <div className="modal-content">
           <div className="content-left">
-            {" "}
             <div className="field-wrapper">
               <input
+                name="firstName"
+                value={values.firstName}
+                onChange={handleChange}
                 className="form-input"
                 type="text"
                 placeholder="First Name"
@@ -41,6 +47,9 @@ export const Modal: React.FC<Props> = ({ handleModal }) => {
             </div>
             <div className="field-wrapper">
               <input
+                name="lastName"
+                value={values.lastName}
+                onChange={handleChange}
                 className="form-input"
                 type="text"
                 placeholder="Second Name"
@@ -48,6 +57,9 @@ export const Modal: React.FC<Props> = ({ handleModal }) => {
             </div>
             <div className="field-wrapper">
               <input
+                name="phoneNumber"
+                value={values.phoneNumber}
+                onChange={handleChange}
                 className="form-input"
                 type="number"
                 placeholder="Mobile Number"
@@ -60,13 +72,15 @@ export const Modal: React.FC<Props> = ({ handleModal }) => {
                 onChange={(e) => {
                   setDateValue(e);
                 }}
-                value={date}
+                value={values.dob}
               />
             </div>
           </div>
         </div>
         <div className="modal-footer">
-          <button className="add-button">Add Customer</button>
+          <button onClick={handleSubmit} className="add-button">
+            Add Customer
+          </button>
         </div>
       </div>
     </div>
