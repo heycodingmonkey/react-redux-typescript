@@ -26,6 +26,7 @@ type Props = LinkDispatchProps & LinkStateProps;
 const Customer: React.FC<Props> = (props) => {
   const [viewModal, setViewModal] = useState<boolean>(false);
   const [isEdit, setModalType] = useState<boolean>(false);
+  const [searchText, setSearchText] = useState<string>("");
   const [selectedCustomer, setSelectedCustomer] = useState<CusInterface>({
     id: "",
     firstName: "",
@@ -69,11 +70,16 @@ const Customer: React.FC<Props> = (props) => {
     setViewModal(false);
   };
 
+  const onChangeSearchText = (value: string) => {
+    setSearchText(value);
+  };
+
   return (
     <div className="customer-view-wrapper">
       <Header handleModal={handleModal} />
-      <SearchNavbar />
+      <SearchNavbar onChangeSearchText={onChangeSearchText} />
       <FlexTable
+        searchText={searchText}
         deleteCustomer={onDeleteCustomer}
         openModal={openEditModal}
         customers={customers}

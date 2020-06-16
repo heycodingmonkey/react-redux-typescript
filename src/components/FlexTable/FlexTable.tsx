@@ -15,6 +15,7 @@ interface Props {
   customers: Customer[];
   deleteCustomer: (value: string) => void;
   openModal: (value: Customer) => void;
+  searchText: string;
 }
 
 export const FlexTable: React.FC<Props> = (props) => {
