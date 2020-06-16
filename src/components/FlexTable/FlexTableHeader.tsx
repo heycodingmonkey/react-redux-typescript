@@ -7,6 +7,7 @@ export const FlexTableHeader: React.FC = () => {
     { name: "Last Name" },
     { name: "Phone Number" },
     { name: "Date of Birth" },
+    { name: "Actions" },
   ]);
 
   return (

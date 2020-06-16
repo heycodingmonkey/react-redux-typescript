@@ -30,8 +30,6 @@ export const startAddCustomer = (customerData: {
   phoneNumber?: string;
   dob?: Date | Date[];
 }) => {
-  console.log(customerData);
-
   return (dispatch: Dispatch<AppActions>, getState: () => AppState) => {
     const {
       firstName = "",

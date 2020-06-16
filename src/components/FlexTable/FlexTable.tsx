@@ -13,6 +13,8 @@ import { Customer } from "../../types/Customer";
 
 interface Props {
   customers: Customer[];
+  deleteCustomer: (value: string) => void;
+  openModal: (value: Customer) => void;
 }
 
 export const FlexTable: React.FC<Props> = (props) => {

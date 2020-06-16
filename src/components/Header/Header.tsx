@@ -4,17 +4,21 @@ import React from "react";
 import "../../assets/components/header.scss";
 
 interface Props {
-  handleModal?: () => void;
+  handleModal: (value: boolean) => void;
 }
+
 // this will list down all the customers added
 export const Header: React.FC<Props> = ({ handleModal }) => {
+  const openModal = () => {
+    handleModal(false);
+  };
   return (
     <div className="table-header-wrapper">
       <div className="header-title-wrapper">
         <div className="header-title">Customers</div>
       </div>
       <div className="button-wrapper">
-        <button onClick={handleModal} className="add-button">
+        <button onClick={openModal} className="add-button">
           Add Customer
         </button>
       </div>

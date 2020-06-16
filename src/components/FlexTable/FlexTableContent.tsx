@@ -7,6 +7,8 @@ import { Customer } from "../../types/Customer";
 
 interface Props {
   customers: Customer[];
+  deleteCustomer: (value: string) => void;
+  openModal: (value: Customer) => void;
 }
 export const FlexTableContent: React.FC<Props> = (props) => {
   const { customers } = props;
@@ -14,7 +16,14 @@ export const FlexTableContent: React.FC<Props> = (props) => {
   return (
     <div className="scroll-padding">
       {customers.map((customer, key) => {
-        return <CustomerCard customer={customer} key={customer.id} />;
+        return (
+          <CustomerCard
+            deleteCustomer={props.deleteCustomer}
+            openModal={props.openModal}
+            customer={customer}
+            key={customer.id}
+          />
+        );
       })}
     </div>
   );

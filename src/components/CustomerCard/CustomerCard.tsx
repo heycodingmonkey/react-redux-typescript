@@ -3,11 +3,21 @@ import { Customer } from "../../types/Customer";
 
 interface Props {
   customer: Customer;
+  deleteCustomer: (value: string) => void;
+  openModal: (value: Customer) => void;
 }
 
 // customer card
 export const CustomerCard: React.FC<Props> = (props) => {
-  const { customer } = props;
+  const { customer, deleteCustomer, openModal } = props;
+
+  const removeCustomer = () => {
+    deleteCustomer(customer.id);
+  };
+
+  const onOpenEditModal = () => {
+    openModal(customer);
+  };
 
   return (
     <div className="accordion-row accordion-row-completed">
@@ -23,6 +33,15 @@ export const CustomerCard: React.FC<Props> = (props) => {
         </div>
         <div className="flex-row">
           <span className="customer-name">01/05/1993</span>
+        </div>
+
+        <div className="flex-row-action">
+          <button onClick={removeCustomer} className="add-button">
+            <i className="material-icons">delete_outline</i>
+          </button>
+          <button onClick={onOpenEditModal} className="add-button">
+            <i className="material-icons">edit</i>
+          </button>
         </div>
       </div>
     </div>

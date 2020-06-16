@@ -2,15 +2,11 @@ import { useState } from "react";
 
 import { Customer } from "../types/Customer";
 
-export const useForm = () => {
+export const useForm = (selectedCustomer: Customer) => {
   // const [date, setDate] = useState<Date | Date[]>(new Date());
 
   const [values, setValues] = useState<Customer>({
-    id: "",
-    firstName: "",
-    lastName: "",
-    phoneNumber: "",
-    dob: new Date(),
+    ...selectedCustomer,
   });
 
   const setDateValue = (value: Date | Date[]) => {

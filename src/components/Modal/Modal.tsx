@@ -9,29 +9,43 @@ import { Customer } from "../../types/Customer";
 import "../../assets/components/modal.scss";
 
 interface Props {
-  open?: boolean;
-  handleModal: () => void;
+  isEdit: boolean;
+  handleModal: (value: boolean) => void;
   onSubmitForm: (values: Customer) => void;
+  selectedCustomer: Customer;
+  onEditCustomer: (values: Customer) => void;
 }
 
 // this will list down all the customers added
-export const Modal: React.FC<Props> = ({ handleModal, onSubmitForm }) => {
-  const { values, handleChange, setDateValue } = useForm();
+export const Modal: React.FC<Props> = ({
+  handleModal,
+  onSubmitForm,
+  isEdit,
+  selectedCustomer,
+  onEditCustomer,
+}) => {
+  const { values, handleChange, setDateValue } = useForm(selectedCustomer);
 
   const handleSubmit = () => {
-    // no validations
-    // pass it to parent component
     onSubmitForm(values);
+  };
+
+  const editCustomer = () => {
+    onEditCustomer(values);
+  };
+
+  const closeModal = () => {
+    handleModal(false);
   };
   return (
     <div className="modal-overlay">
       <div className="modal-wrapper">
         <div className="modal-header">
           <div className="modal-title-wrapper">
-            <div>Add Customer</div>
+            <div>{isEdit ? "Edit" : "Add"} Customer</div>
           </div>
           <div className="icon-wrapper">
-            <Clear onClick={handleModal} className="clear-icon" />
+            <Clear onClick={closeModal} className="clear-icon" />
           </div>
         </div>
         <div className="modal-content">
@@ -79,9 +93,15 @@ export const Modal: React.FC<Props> = ({ handleModal, onSubmitForm }) => {
           </div>
         </div>
         <div className="modal-footer">
-          <button onClick={handleSubmit} className="add-button">
-            Add Customer
-          </button>
+          {!isEdit ? (
+            <button onClick={handleSubmit} className="add-button">
+              Add Customer
+            </button>
+          ) : (
+            <button onClick={editCustomer} className="add-button">
+              Edit Customer
+            </button>
+          )}
         </div>
       </div>
     </div>
